@@ -13,8 +13,8 @@ const showHelp = (): void => {
   Task CLI - A command-line interface for managing and automating tasks.
 
   Available commands:
-    add <task>                - Add a new task.
-    list                       - Show the task list.
+    add <task>                  - Add a new task.
+    list                        - Show the task list.
     mark-in-progress <id>       - Mark a task as in progress.
     mark-done <id>              - Mark a task as completed.
     delete <id>                 - Delete a task by id.
