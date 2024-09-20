@@ -8,6 +8,29 @@ readTasks(filePath)
 
 let taskId = 0
 
+const showHelp = (): void => {
+  console.log(`
+  Task CLI - A command-line interface for managing and automating tasks.
+
+  Available commands:
+    add <task>                - Add a new task.
+    list                       - Show the task list.
+    mark-in-progress <id>       - Mark a task as in progress.
+    mark-done <id>              - Mark a task as completed.
+    delete <id>                 - Delete a task by id.
+
+  Usage:
+    task-cli <command> [arguments]
+
+  Examples:
+    task-cli add "Buy milk"        - Add a new task with the títle "Buy milk".
+    task-cli list                  - Show all the task list.
+    task-cli mark-in-progress 1    - Mark the task with id 1 as in progress.
+    task-cli mark-done 1           - Mark the task with id 1 as completed.
+    task-cli delete 1              - Delete the task with id 1.
+  `)
+}
+
 switch (args[2]) {
   case 'add':
     taskId = addTask(args[3], filePath)
@@ -36,5 +59,6 @@ switch (args[2]) {
     break
   default:
     console.error('Command not found')
+    showHelp()
     break
 }
